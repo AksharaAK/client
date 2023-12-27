@@ -11,18 +11,13 @@ const ConversationProvider = ({ children }) => {
   const [allConversations, setAllConversations] = useState([]);
 
   useEffect(() => {
-    console.log("and all");
     const storedConversations = JSON.parse(
       localStorage.getItem("allConversations")
     );
-    console.log(storedConversations || []);
     setAllConversations(storedConversations || []);
   }, []);
 
-  console.log({ allConversations });
-
   useEffect(() => {
-    console.log("hi");
     if (allConversations.length != 0)
       localStorage.setItem(
         "allConversations",
@@ -46,7 +41,6 @@ const ConversationProvider = ({ children }) => {
     ) {
       setAllConversations((convos) => {
         const existingIndex = convos.findIndex((c) => c.id === currentId);
-        console.log(existingIndex);
 
         if (existingIndex != -1) {
           return convos.map((c) =>
