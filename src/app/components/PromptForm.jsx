@@ -19,7 +19,7 @@ export default function PromptForm() {
   } = useContext(ConversationContext);
 
   useEffect(() => {
-    const socket = io("http://localhost:3000");
+    const socket = io(process.env.REACT_APP_BACKEND_URL);
 
     socket.on("response", (latestMessage, latestMeta) => {
       console.log("getting response");
