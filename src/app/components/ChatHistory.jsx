@@ -15,7 +15,7 @@ export default function () {
   const selectConversation = (conversation) => showConversation(conversation);
 
   return (
-    <div class="w-28 min-w-15 md:w-1/5 bg-primary-dark py-0  text-primary-light md:flex md:flex-col overflow-y-scroll md:justify-between ">
+    <div className="w-28 min-w-15 md:w-1/5 bg-primary-dark py-0  text-primary-light md:flex md:flex-col overflow-y-scroll md:justify-between ">
       <SidebarTitle />
       <div className="flex-col flex space-y-6 ">
         {allConversations.map((conversation, index) => (
