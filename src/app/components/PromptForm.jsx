@@ -19,9 +19,7 @@ export default function PromptForm() {
   } = useContext(ConversationContext);
 
   useEffect(() => {
-    const socket = io("wss://server-seven-ivory-55.vercel.app", {
-      transports: ["websocket"],
-    });
+    const socket = io("http://localhost:3000");
 
     socket.on("response", (latestMessage, latestMeta) => {
       console.log("getting response");
