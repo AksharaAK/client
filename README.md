@@ -32,7 +32,7 @@ https://github.com/AksharaAK/client/assets/39496422/de975028-2edd-4588-b47a-70e7
 
    ```bash
    git clone <repository-url>
-   cd Client
+   cd client
    ```
 
 2. Install dependencies:
@@ -65,14 +65,14 @@ https://github.com/AksharaAK/client/assets/39496422/de975028-2edd-4588-b47a-70e7
 
 Configure the Socket.IO connection in your client code:
 
-    ```javascript
+   ```javascript
 
     import { useEffect } from 'react';
     import io from 'socket.io-client';
 
     const socket = io('http://localhost:3000');
 
-    ```
+   ```
 
 ## Deployment
 
