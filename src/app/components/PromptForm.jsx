@@ -15,17 +15,17 @@ export default function PromptForm() {
   const {
     currentConversation,
     updateCurrentConversation,
-    updateConversationMetadata,
+    updateCurrentMetadata,
   } = useContext(ConversationContext);
 
   useEffect(() => {
-    const socket = io(process.env.REACT_APP_BACKEND_URL);
+    const socket = io("http://localhost:3000");
 
     socket.on("response", (latestMessage, latestMeta) => {
       console.log("getting response");
       setLoading(false);
       updateCurrentConversation(latestMessage);
-      updateConversationMetadata((oldMeta) => [...oldMeta, latestMeta]);
+      updateCurrentMetadata((oldMeta) => [...oldMeta, latestMeta]);
     });
 
     setSocket(socket);
@@ -50,7 +50,7 @@ export default function PromptForm() {
       },
     ]);
 
-    updateConversationMetadata((oldMeta) => [
+    updateCurrentMetadata((oldMeta) => [
       ...oldMeta,
       {
         role: "user",

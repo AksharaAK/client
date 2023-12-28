@@ -3,7 +3,7 @@ import Start from "./Start";
 import { ConversationContext } from "../context/ConversationContext";
 
 export default function ChatBody() {
-  const { currentConversation, conversationMetadata } =
+  const { currentConversation, currentMetadata } =
     useContext(ConversationContext);
 
   return (
@@ -35,7 +35,7 @@ export default function ChatBody() {
                     : "text-primary-dark ml-1 "
                 }`}
               >
-                {conversationMetadata[index]?.created}
+                {currentMetadata[index]?.created}
               </div>
             </div>
           ))}
