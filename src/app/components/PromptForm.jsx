@@ -18,10 +18,18 @@ export default function PromptForm() {
     updateCurrentMetadata,
   } = useContext(ConversationContext);
 
+  const connectionOptions = {
+    "force new connection": true,
+    reconnectionAttempts: "Infinity",
+    timeout: 10000,
+    transports: ["websocket", "polling", "flashsocket"],
+  };
+
   useEffect(() => {
-    const socket = io("https://server-seven-ivory-55.vercel.app", {
-      transports: ["websocket"],
-    });
+    const socket = io(
+      "https://server-seven-ivory-55.vercel.app",
+      connectionOptions
+    );
 
     socket.on("response", (latestMessage, latestMeta) => {
       console.log("getting response");
