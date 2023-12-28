@@ -1,4 +1,4 @@
-![Screenshot 2023-12-28 at 14 43 47](https://github.com/AksharaAK/client/assets/39496422/377bc5ec-556b-4376-976a-b356930a78e2)# ChatNBX Client
+# ChatNBX Client
 
 Welcome to the ChatNBX Client project! This client communicates with the ChatNBX Server using Socket.IO for real-time chat.
 
@@ -7,6 +7,8 @@ Welcome to the ChatNBX Client project! This client communicates with the ChatNBX
 A few screengrabs of the deployed frontend highlighting, app features (New Chat, Save Convo, Delete all convos etc) and mobile responsive UI. 
 
 ![Screenshot 2023-12-28 at 14 43 47](https://github.com/AksharaAK/client/assets/39496422/eaa792cf-a5da-4b1d-8052-22252f2234e4)
+
+![Screenshot 2023-12-28 at 14 43 47](https://github.com/AksharaAK/client/assets/39496422/377bc5ec-556b-4376-976a-b356930a78e2)
 
 ## Tech Stack
 
