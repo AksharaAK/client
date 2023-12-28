@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ChatNBX Client
 
-## Getting Started
+Welcome to the ChatNBX Client project! This client communicates with the ChatNBX Server using Socket.IO for real-time chat.
 
-First, run the development server:
+### Preview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Insert a preview image or screenshot of your ChatNBX Client here.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Next.js:** A React framework for building web applications.
+- **Tailwind CSS:** A utility-first CSS framework for styling.
+- **Socket.IO:** A library for real-time web applications.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+- Real-time chat with ChatNBX Server.
+- Responsive design and UI for a seamless experience on various devices.
+- Storage of previous chat conversations available on reload.
 
-To learn more about Next.js, take a look at the following resources:
+## Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   git clone <repository-url>
+   cd Client
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Configure environment variables:
+
+   Create a .env file in the root of the Client directory with the following content:
+
+   ```env.eg
+   REACT_APP_BACKEND_URL=<your-server-url>
+   ```
+
+   ```env
+   REACT_APP_BACKEND_URL=http://localhost:3000
+   ```
+
+4. Run the server:
+
+   ```bash
+   npm start
+   ```
+
+   The server will start on http://localhost:3001 locally as port 3000 is used by server.
+
+## Socket.IO Configuration
+
+Configure the Socket.IO connection in your client code:
+
+    ```javascript
+
+    import { useEffect } from 'react';
+    import io from 'socket.io-client';
+
+    const socket = io('http://localhost:3000');
+
+    ```
+
+## Deployment
+
+Deploy the client to your preferred platform. Ensure the environment variables are configured appropriately.
