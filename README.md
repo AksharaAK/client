@@ -8,7 +8,10 @@ A few screengrabs of the deployed frontend highlighting, app features (New Chat,
 
 ![Screenshot 2023-12-28 at 14 43 47](https://github.com/AksharaAK/client/assets/39496422/eaa792cf-a5da-4b1d-8052-22252f2234e4)
 
-https://github.com/AksharaAK/client/assets/39496422/4bc7d8bd-f4c7-4007-934f-0bbcdc0c5a8f
+
+
+https://github.com/AksharaAK/client/assets/39496422/de975028-2edd-4588-b47a-70e7b159b0de
+
 
 
 ## Tech Stack
