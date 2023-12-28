@@ -22,7 +22,6 @@ export default function PromptForm() {
     const socket = io("http://localhost:3000");
 
     socket.on("response", (latestMessage, latestMeta) => {
-      console.log("getting response");
       setLoading(false);
       updateCurrentConversation(latestMessage);
       updateCurrentMetadata((oldMeta) => [...oldMeta, latestMeta]);

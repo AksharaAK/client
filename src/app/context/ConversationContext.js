@@ -67,7 +67,6 @@ const ConversationProvider = ({ children }) => {
             id: newId,
             messages: currentConversation,
           };
-          console.log(newConversation);
           return [...convos, newConversation];
         }
       });
@@ -84,7 +83,6 @@ const ConversationProvider = ({ children }) => {
             id: newId,
             meta: currentMetadata,
           };
-          console.log(newConversationMeta);
           return [...convoMeta, newConversationMeta];
         }
       });
