@@ -4,7 +4,17 @@ Welcome to the ChatNBX Client project! This client communicates with the ChatNBX
 
 ### Preview
 
-Insert a preview image or screenshot of your ChatNBX Client here.
+A few screengrabs of the deployed frontend highlighting, app features (New Chat, Save Convo, Delete all convos etc) and mobile responsive UI. 
+
+![Screenshot 2023-12-28 at 14 43 47](https://github.com/AksharaAK/client/assets/39496422/eaa792cf-a5da-4b1d-8052-22252f2234e4)
+
+![Screenshot 2023-12-28 at 15 24 45](https://github.com/AksharaAK/client/assets/39496422/612e2e49-f3b4-445a-8ad6-0093b23dc9b1)
+
+https://github.com/AksharaAK/client/assets/39496422/de975028-2edd-4588-b47a-70e7b159b0de
+
+https://github.com/AksharaAK/client/assets/39496422/e986b7bb-9c68-4786-b9d7-686b91f6d668
+
+
 
 ## Tech Stack
 
@@ -24,7 +34,7 @@ Insert a preview image or screenshot of your ChatNBX Client here.
 
    ```bash
    git clone <repository-url>
-   cd Client
+   cd client
    ```
 
 2. Install dependencies:
@@ -57,15 +67,16 @@ Insert a preview image or screenshot of your ChatNBX Client here.
 
 Configure the Socket.IO connection in your client code:
 
-    ```javascript
+   ```javascript
 
     import { useEffect } from 'react';
     import io from 'socket.io-client';
 
     const socket = io('http://localhost:3000');
 
-    ```
+   ```
 
 ## Deployment
 
 Deploy the client to your preferred platform. Ensure the environment variables are configured appropriately.
+Checkout the deployed frontend at <https://client-seven-taupe.vercel.app/>
