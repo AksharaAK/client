@@ -16,6 +16,9 @@ export default function PromptForm() {
     currentConversation,
     updateCurrentConversation,
     updateCurrentMetadata,
+    updateCurrentTitle,
+    setHasTitle,
+    hasTitle,
   } = useContext(ConversationContext);
 
   useEffect(() => {
@@ -25,6 +28,11 @@ export default function PromptForm() {
       setLoading(false);
       updateCurrentConversation(latestMessage);
       updateCurrentMetadata((oldMeta) => [...oldMeta, latestMeta]);
+    });
+
+    socket.on("newTitle", (title) => {
+      setHasTitle(true);
+      updateCurrentTitle(title);
     });
 
     setSocket(socket);
@@ -40,6 +48,8 @@ export default function PromptForm() {
 
     setLoading(true);
     socket.emit("message", newMessageText, currentConversation);
+    if (hasTitle === false)
+      socket.emit("title", newMessageText, currentConversation);
 
     updateCurrentConversation((oldConvo) => [
       ...oldConvo,

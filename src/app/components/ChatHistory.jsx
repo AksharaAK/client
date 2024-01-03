@@ -5,14 +5,12 @@ import SidebarActions from "./SidebarActions";
 import SidebarTitle from "./SidebarTitle";
 
 export default function () {
-  const {
-    allConversations,
+  const { allConversations, showConversation, currentId } =
+    useContext(ConversationContext);
 
-    showConversation,
-    currentId,
-  } = useContext(ConversationContext);
-
-  const selectConversation = (conversation) => showConversation(conversation);
+  const selectConversation = (conversation) => {
+    showConversation(conversation);
+  };
 
   return (
     <div className="w-28 min-w-15 md:w-1/5 bg-primary-dark py-0  text-primary-light md:flex md:flex-col overflow-y-scroll overflow-x-hidden md:justify-between ">
@@ -26,7 +24,7 @@ export default function () {
             key={index}
             onClick={() => selectConversation(conversation)}
           >
-            {`Chat ${conversation.id}`}
+            {conversation.title}
           </div>
         ))}
       </div>

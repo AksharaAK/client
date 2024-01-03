@@ -4,10 +4,12 @@ import { v4 as uuidv4 } from "uuid";
 const ConversationContext = createContext();
 
 const ConversationProvider = ({ children }) => {
+  const [hasTitle, setHasTitle] = useState(false);
   const [currentId, setCurrentId] = useState("");
 
   const [currentConversation, setCurrentConversation] = useState([]);
   const [currentMetadata, setCurrentMetadata] = useState([]);
+  const [currentTitle, setCurrentTitle] = useState("");
 
   const [allConversations, setAllConversations] = useState([]);
   const [allConversationMeta, setAllConversationMeta] = useState([]);
@@ -46,6 +48,10 @@ const ConversationProvider = ({ children }) => {
     setCurrentMetadata(currentMetadata);
   };
 
+  const updateCurrentTitle = (currentTitle) => {
+    setCurrentTitle(currentTitle);
+  };
+
   const addToAllConversations = () => {
     if (
       currentConversation.some(
@@ -59,13 +65,18 @@ const ConversationProvider = ({ children }) => {
         if (existingIndex != -1) {
           return convos.map((c) =>
             c.id === currentId
-              ? { id: currentId, messages: currentConversation }
+              ? {
+                  id: currentId,
+                  messages: currentConversation,
+                  title: currentTitle,
+                }
               : c
           );
         } else {
           const newConversation = {
             id: newId,
             messages: currentConversation,
+            title: currentTitle,
           };
           return [...convos, newConversation];
         }
@@ -90,10 +101,13 @@ const ConversationProvider = ({ children }) => {
     setCurrentConversation([]);
     setCurrentMetadata([]);
     setCurrentId("");
+    setCurrentTitle("");
+    setHasTitle(false);
   };
 
   const showConversation = (conversation) => {
     setCurrentId(conversation.id);
+    setCurrentTitle(conversation.title);
     updateCurrentConversation(conversation.messages);
     const meta = allConversationMeta.filter((c) => c.id === conversation.id);
     updateCurrentMetadata(meta[0].meta);
@@ -104,6 +118,8 @@ const ConversationProvider = ({ children }) => {
     setCurrentConversation([]);
     setCurrentMetadata([]);
     setCurrentId("");
+    setCurrentTitle("");
+    setHasTitle(false);
   };
 
   return (
@@ -113,12 +129,16 @@ const ConversationProvider = ({ children }) => {
         allConversations,
         currentMetadata,
         currentId,
+        currentTitle,
+        updateCurrentTitle,
         updateCurrentConversation,
         addToAllConversations,
         deleteAllConversations,
         updateCurrentMetadata,
         setCurrentId,
         showConversation,
+        hasTitle,
+        setHasTitle,
       }}
     >
       {children}
