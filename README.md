@@ -75,8 +75,3 @@ Configure the Socket.IO connection in your client code:
     const socket = io('http://localhost:3000');
 
    ```
-
-## Deployment
-
-Deploy the client to your preferred platform. Ensure the environment variables are configured appropriately.
-Checkout the deployed frontend at <https://client-seven-taupe.vercel.app/>
